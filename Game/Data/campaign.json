@@ -1,0 +1,721 @@
+{
+	"campaign": [
+		{
+			"name": "Campaign screen",
+			"desc": "This is a 'fake level' which is loaded whenever you visit the campaign screen. Makes the code and scene structure very streamlined, though it requires some modifications to the properties.",
+			"points_per_star": 0,
+			"props": {
+				"override_num_players": 4,
+				"allow_cell_sharing_for_players": true,
+				"disable_rotation_input": true,
+				"map_size": [15,13]
+			}
+		},
+
+		{
+			"name": "Teddy Bear Topia",
+			"desc": "As we all know, every young teddy bear dreams of finding a soft, warm bed in which to sleep and cuddle. That's where you come in! Help the bears find a bed in this training exercise, and we will hire you for the job!",
+			"points_per_star": 35,
+			"props": {
+
+				"special_cells": [],
+
+				"beds_need_correct_rotation": false,
+				"players_can_stand_on_beds": true,
+				"auto_rotate_bears": true,
+				"disable_rotation_input": true,
+
+				"solo_player_point_multiplier": 1.6,
+
+				"bear_spawning": {
+					"keep_to_same_area": true
+				},
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 40
+				},
+				
+				"tutorial": ["Deliver", "Hug", "Move"]
+			}
+		},
+
+		{
+			"name": "Windy Days",
+			"desc": "In real life, teddy bears don't magically rotate. Instead, YOU must rotate yourself to hug them. To help with this, we've added special tornado cells to the level.",
+			"points_per_star": 60,
+			"props": {
+
+				"special_cells": ["rotator"],
+
+				"beds_need_correct_rotation": false,
+				"players_can_stand_on_beds": true,
+				"disable_rotation_input": true,
+
+				"solo_player_point_multiplier": 1.6,
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"bear_spawning": {
+					"keep_to_same_area": true
+				},
+
+				"objective": {
+					"duration": 45
+				},
+				
+				"tutorial": ["Rotator"]
+			}
+		},
+
+		{
+			"name": "Working Together",
+			"desc": "Oh no! The bears played a trick on us! To force us to work together, they moved the beds as far away from themselves as possible! We've added a special shooter cell to, well, shoot bears across the map.",
+			"points_per_star": 70,
+			"props": {
+
+				"special_cells": ["rotator", "shooter"],
+
+				"beds_need_correct_rotation": false,
+				"players_can_stand_on_beds": true,
+				"disable_rotation_input": true,
+
+				"solo_split_field": "partial",
+
+				"solo_player_point_multiplier": 1.6,
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 90
+				},
+				
+				"tutorial": ["Shooter"]
+			}
+		},
+
+		{
+			"name": "A New Skill",
+			"desc": "Hmm. Teddy bears have reported that those tornado cells, the ones that rotate you, are a bit noisy and keep waking them up. So we made a great invention! From now on, you can press a button to rotate your character yourself. No help necessary!",
+			"points_per_star": 90,
+			"props": {
+
+				"special_cells": ["shooter"],
+
+				"beds_need_correct_rotation": false,
+				"players_can_stand_on_beds": true,
+				"cells_rotate_with_player": false,
+
+				"solo_split_field": "partial",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 90
+				},
+				
+				"tutorial": ["Rotate"]
+			}
+		},
+
+		{
+			"name": "Bad for your Back",
+			"desc": "Teddy bears don't like sleeping in awkard positions. From now on, their head will need to land on the pillow, or they won't accept the bed.",
+			"points_per_star": 60,
+			"props": {
+
+				"special_cells": ["shooter"],
+
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 120
+				},
+				
+				"tutorial": ["RotateCells", "DeliverRotation"]
+			}
+		},
+
+		{
+			"name": "Prickly Hugs",
+			"desc": "Oh no, our sworn enemies have arrived! THE CACTI! Whenever a player holds a cactus, you'll lose points.",
+			"points_per_star": 50,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter"],
+
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 120
+				},
+				
+				"tutorial": ["Cactus"]
+			}
+		},
+
+		{
+			"name": "Controlling the Cacti",
+			"desc": "Last night, we accidentally made a hole in our world. Turns out that it's the PERFECT place to stash cacti! Throw them in holes to get rid of them, and get points. However ... I'm afraid that the hole will also remove teddy bears.",
+			"points_per_star": 60,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter","hole"],
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"objective": {
+					"duration": 150
+				},
+				
+				"tutorial": ["Hole"]
+			}
+		},
+
+		{
+			"name": "Move Along",
+			"desc": "Okay, here's a secret: until now, we've made sure that beds were always positioned in line with a shooter. You know, to help you out. But that's about to change! Beds can be anywhere now, and you get a new cell to move them around!",
+			"points_per_star": 50,
+			"props": {
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter","bedmover","hole"],
+
+				"solo_split_field": "partial",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 150
+				},
+				
+				"tutorial": ["BedMover"]
+			}
+		},
+
+		{
+			"name": "Helping your Friends",
+			"desc": "We've noticed that teddy bears don't always like it when they have to travel alone. They'd much rather be gently carried to the other side of the field. We invented something to help with that!",
+			"points_per_star": 60,
+			"props": {
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter","bedmover", "teleport", "hole"],
+
+				"solo_split_field": "full",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["Teleport"]
+			}
+		},
+
+		{
+			"name": "Helping your Friends Better",
+			"desc": "Okay, so, there were a few issues with our invention. Sometimes, bears would accidentally teleport all the time! And, as it turns out, teddy bears get really sick and dizzy if they are teleported too much. So we put a timer on it.",
+			"points_per_star": 70,
+			"props": {
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter","bedmover", "teleport", "hole"],
+
+				"teleport_needs_timer": true,
+				"can_rewind_timers": false,
+				"solo_split_field": "full",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["TeleportUpdate"]
+			}
+		},
+
+		{
+			"name": "Sleeping Time is Over!",
+			"desc": "We thought cacti were our sworn enemy ... but it's actually ALARM CLOCKS! They do horrible, horrible things to teddy bears! When they go off, any bear close to it will wake up from its warm sleep - all consequences included ...",
+			"points_per_star": 40,
+			"props": {
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter", "bedmover", "teleport", "alarm"],
+
+				"teleport_needs_timer": true,
+				"can_rewind_timers": false,
+				"solo_split_field": "full",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["Alarm"]
+			}
+		},
+
+		{
+			"name": "Snoozing",
+			"desc": "Ehm ... we had a good look at the alarm clocks, and it turned out there were buttons on the other side. One of them is for snoozing. What an invention! It allows you to rewind alarm clocks, so they don't go off as quickly.",
+			"points_per_star": 50,
+			"props": {
+				"special_items": ["tinycactus"],
+				"special_cells": ["shooter", "bedmover", "teleport", "alarm"],
+
+				"teleport_needs_timer": true,
+				"solo_split_field": "full",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["AlarmRewind"]
+			}
+		},
+
+		{
+			"name": "It's Trampoline Time!",
+			"desc": "We've been told by Health and Safety Inspection, that our shooter cells are waaaay too dangerous, and not cute at all. But ... how will we deliver bears without them? Oh, I know, we'll use trampolines.",
+			"points_per_star": 60,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["trampoline", "bedmover", "hole", "teleport"],
+
+				"teleport_needs_timer": true,
+				"solo_split_field": "full",
+
+				"moving": {
+					"use_max_steps": false
+				},
+
+				"objective": {
+					"duration": 210
+				},
+				
+				"tutorial": ["Trampoline"]
+			}
+		},
+
+		{
+			"name": "A Soft Landing",
+			"desc": "Some teddy bears have filed a complaint that, when they were flying, there was NOBODY waiting to catch them on the other side! I must say I am very disappointed. We procured a large set of pillows from the beds; use these to catch flying bears when you're not around.",
+			"points_per_star": 50,
+			"props": {
+
+				"special_items": ["tinycactus", "tinypillow"],
+				"special_cells": ["trampoline", "bedmover", "hole", "teleport"],
+
+				"teleport_needs_timer": true,
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 210
+				},
+				
+				"tutorial": ["Pillow", "StepCounting"]
+			}
+		},
+
+		{
+			"name": "Your Biggest Wish",
+			"desc": "It turns out beds were not the final dream of bears. They actually dreamt of hugging. From now on, teddy bears simply want to hug a big bear! (They replace the beds and work in exactly the same way.)",
+			"points_per_star": 60,
+			"props": {
+
+				"special_items": ["tinycactus", "tinypillow"],
+				"special_cells": ["trampoline", "hole", "teleport"],
+
+				"teleport_needs_timer": true,
+				"big_bear_requires_player_hug": false,
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"bear_spawning": {
+					"use_beds": false
+				},
+
+				"objective": {
+					"duration": 210
+				},
+				
+				"tutorial": ["BigBear"]
+			}
+		},
+
+		{
+			"name": "Awkward Hugs",
+			"desc": "The Big Bears have told us they don't like you hugging them from all sides. From now on, you can only enter their cell if you are hugging them properly.",
+			"points_per_star": 55,
+			"props": {
+
+				"special_items": ["tinycactus", "tinypillow"],
+				"special_cells": ["trampoline", "hole", "teleport"],
+
+				"teleport_needs_timer": true,
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"objective": {
+					"duration": 210
+				},
+
+				"bear_spawning": {
+					"use_beds": false
+				},
+				
+				"tutorial": ["EnteringBigBears"]
+			}
+		},
+
+		{
+			"name": "Last Warning",
+			"desc": "The department for Health & Safety came by again. They told us that throwing teddy bears across the field ... and making them fly in a straight line for half a minute ... is NOT very good for their health. So we had to stop that. From now on, you get a penalty when a teddy bear flies out of the map.",
+			"points_per_star": 50,
+			"props": {
+
+				"special_items": ["tinycactus", "tinypillow"],
+				"special_cells": ["trampoline", "hole", "teleport"],
+
+				"teleport_needs_timer": true,
+				"line_up_trampolines_with_beds": true,
+				"solo_split_field": "partial",
+
+				"objective": {
+					"duration": 240
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false
+				},
+				
+				"tutorial": ["PenaltyOutOfBounds"]
+			}
+		},
+
+		{
+			"name": "Flexible Workers",
+			"desc": "Our Head Archeologist - which we've apparantly had in our business for hundreds of years - just told us that our world was built on the ancient grounds of a magical forest. This means our world has the amazing property to shift around! To control this, we built a new cell that allows you to move full rows or columns by one step.",
+			"points_per_star": 60,
+			"props": {
+
+				"special_items": ["tinycactus", "tinypillow"],
+				"special_cells": ["trampoline", "alarm", "autoshifter"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false
+				},
+				
+				"tutorial": ["AutoShifter"]
+			}
+		},
+
+		{
+			"name": "Buying Happiness",
+			"desc": "I have sad news. Last week, our pillows stopped appearing magically on our doorstep. We don't know why they appeared in the first place, so we can't solve the problem! Instead, we had to build a STORE, where you can get new pillows. However, in our panic and great haste, we may have built a slightly dysfunctional store.",
+			"points_per_star": 35,
+			"props": {
+
+				"special_items": [],
+				"special_cells": ["trampoline", "alarm", "autoshifter", "store"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false
+				},
+				
+				"tutorial": ["Store"]
+			}
+		},
+
+		{
+			"name": "A Heart full of Love",
+			"desc": "A Wise Bear once told us there were two ingredients to a good hug: soft, warm arms ... and a loaf of bread? It took us a while to understand the Wise Bear didn't say loaf, but love. He was hard to understand through his grey beard, okay? Anyway, now that we figured out this complex riddle, we can add LOVE to our hugs for extra points!",
+			"points_per_star": 40,
+			"props": {
+
+				"special_items": ["tinyheart"],
+				"special_cells": ["trampoline", "alarm", "autoshifter", "store"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["HeartPartOne", "HeartPartTwo"]
+			}
+		},
+
+		{
+			"name": "Presenting a Gift",
+			"desc": "What does everyone like? What makes everyone happy, and curious, and excited? That's right! Pizza. And how do you give someone pizza? You put it in a box. And call it a gift. But, obviously, gifts are only worth something when SHARED ... ",
+			"points_per_star": 40,
+			"props": {
+
+				"special_items": ["tinyheart", "tinygift"],
+				"special_cells": ["trampoline", "alarm", "autoshifter", "store"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["Gift"]
+			}
+		},
+
+		{
+			"name": "That's a Wrap!",
+			"desc": "We made a small mistake. Apparantly, it's not very practical to just give people random, hot slices of pizza. It's much nicer to put it in a safe container, like a box, nicely wrapped and closed. So we built a machine to do just that! Unfortunately, as you might expect by now, the machine ended up doing a bit more than we planned.",
+			"points_per_star": 70,
+			"props": {
+
+				"special_items": [],
+				"special_cells": ["trampoline", "alarm", "autoshifter", "store", "giftwrapper"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["GiftWrapper"]
+			}
+		},
+
+		{
+			"name": "Visiting Friends",
+			"desc": "The recent discovery of the magical shifting cells in our forest gave us an idea! We've destroyed all our teleporters, and used their parts to build a new cell: the row shifter. It's a knob. And when you rotate it, your whole ROW shifts!",
+			"points_per_star": 50,
+			"props": {
+
+				"special_items": [],
+				"special_cells": ["trampoline", "alarm", "autoshifter", "store", "giftwrapper", "shifter"],
+
+				"solo_split_field": "full",
+				"only_place_row_shifters": true,
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["RowShifter"]
+			}
+		},
+
+		{
+			"name": "Visiting Friends Better",
+			"desc": "Now that our rowshifters have entered the workplace, and are obviously a GREAT success - with a 99% satisfaction and approval rating from the teddy bears - our next invention couldn't stay behind: the column shifters.",
+			"points_per_star": 35,
+			"props": {
+
+				"special_items": [],
+				"special_cells": ["trampoline", "alarm", "store", "giftwrapper", "shifter"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["ColShifter"]
+			}
+		},
+
+		{
+			"name": "Bamboozled",
+			"desc": "Argh! Our magical supply of pillows broke down AGAIN! But now that all the beds are gone, there's nowhere we can buy more pillows. Luckily, a certain Wise Bear foresaw this event, and planted loads of bamboo trees hundreds of years ago. They should be quite strong and useful by now. And as we all know, teddy bears love to climb bamboo whenever they come across it!",
+			"points_per_star": 60,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["trampoline", "alarm", "giftwrapper", "shifter", "bamboo"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["Bamboo"]
+			}
+		},
+
+		{
+			"name": "A Step Forward",
+			"desc": "On behalf of the Healthy & Safety Inspection, we've started a sports program to improve the strength and stamina of all our teddy bear huggers! Don't worry though, we will not ACTUALLY be doing physical exercise. We tricked them! We just built another new cell that can increase or decrease how many steps you take with an item.",
+			"points_per_star": 45,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["trampoline", "alarm", "giftwrapper", "shifter", "bamboo", "stepchanger"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["StepChanger"]
+			}
+		},
+
+		{
+			"name": "Smart Hugging Systems",
+			"desc": "After all this hard work, it turns out we're in the future now, and computers can do everything for us. How great! No actual human contact necessary! Isn't the future fun? We've purchased thousands of conveyor belts to help you with your final task before you can retire.",
+			"points_per_star": 30,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["conveyorbelt", "alarm", "giftwrapper", "shifter", "bamboo", "stepchanger"],
+
+				"solo_split_field": "full",
+
+				"objective": {
+					"duration": 300
+				},
+
+				"moving": {
+					"bears_wrap_field": false,
+				},
+
+				"bear_spawning": {
+					"use_beds": false,
+					"use_point_gui": true,
+				},
+				
+				"tutorial": ["ConveyorBelt"]
+			}
+		},
+
+	]
+}
+

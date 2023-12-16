@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/Medium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/ScoreGUI.gd" type="Script" id=3]
+
+[node name="ScoreGUI" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Score1" type="Label" parent="."]
+margin_left = -205.765
+margin_top = -201.309
+margin_right = 205.235
+margin_bottom = -40.3088
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = -205.765
+margin_top = -81.1732
+margin_right = 205.235
+margin_bottom = 79.8268
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Label" parent="."]
+margin_left = -205.765
+margin_top = 60.3198
+margin_right = 205.235
+margin_bottom = 221.32
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

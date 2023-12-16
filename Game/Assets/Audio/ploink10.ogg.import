@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ploink10.ogg-481ce7c8ac5eb5c63e1bc80bd329f89c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/ploink10.ogg"
+dest_files=[ "res://.import/ploink10.ogg-481ce7c8ac5eb5c63e1bc80bd329f89c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

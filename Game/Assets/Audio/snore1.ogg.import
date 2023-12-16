@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snore1.ogg-849eab6a33250e649a3c4cabb6b5a287.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/snore1.ogg"
+dest_files=[ "res://.import/snore1.ogg-849eab6a33250e649a3c4cabb6b5a287.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

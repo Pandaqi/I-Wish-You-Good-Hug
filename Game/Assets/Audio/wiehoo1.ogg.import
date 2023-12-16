@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wiehoo1.ogg-dcd47a4e45eecd3f8727da0796c6a737.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/wiehoo1.ogg"
+dest_files=[ "res://.import/wiehoo1.ogg-dcd47a4e45eecd3f8727da0796c6a737.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

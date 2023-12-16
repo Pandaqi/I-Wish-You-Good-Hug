@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/woosh6.ogg-1c32dad9ce6341117d74b5115fcdedd6.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/woosh6.ogg"
+dest_files=[ "res://.import/woosh6.ogg-1c32dad9ce6341117d74b5115fcdedd6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

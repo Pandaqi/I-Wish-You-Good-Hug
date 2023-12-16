@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+// 0.2 * 0.125 => bands are 20% of the full width, spritesheet is sliced in 8 parts (1/8 = 0.125)
+
+uniform float band_width = 0.025; 
+uniform float scroll_speed = 0.066;
+
+void fragment() {
+	vec4 col = texture(TEXTURE, UV);
+	
+	vec2 uv = UV - vec2(TIME*scroll_speed, 0);
+	
+	if( (uv.x-floor(uv.x / band_width) * band_width) < 0.5*band_width) {
+		col = vec4(0.7,0.6,0.5,col.a);
+	}
+	
+	COLOR = col;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/band_width = 0.025
+shader_param/scroll_speed = 0.066

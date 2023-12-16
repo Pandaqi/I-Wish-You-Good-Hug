@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pillow3.ogg-00aa22304b59acc530fdbfe670078fdc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/pillow3.ogg"
+dest_files=[ "res://.import/pillow3.ogg-00aa22304b59acc530fdbfe670078fdc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

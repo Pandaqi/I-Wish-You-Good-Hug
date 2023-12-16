@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rumble7.ogg-33160ba6810c1be68323b99bd8cc67dc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/rumble7.ogg"
+dest_files=[ "res://.import/rumble7.ogg-33160ba6810c1be68323b99bd8cc67dc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

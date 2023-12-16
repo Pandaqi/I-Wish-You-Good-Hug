@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hmm3.ogg-4af7fdb4bde87e2fe897ddc973215324.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/hmm3.ogg"
+dest_files=[ "res://.import/hmm3.ogg-4af7fdb4bde87e2fe897ddc973215324.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/later2.ogg-ffc134d38343502404691f5e9b3323d2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/later2.ogg"
+dest_files=[ "res://.import/later2.ogg-ffc134d38343502404691f5e9b3323d2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

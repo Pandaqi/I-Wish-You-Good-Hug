@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Settings.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/Large.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Marketing/LogoWide.png" type="Texture" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(0, 5);
+
+void fragment() {
+	float dist_to_center = (length(SCREEN_UV - vec2(0.5, 0.5)));
+	float scalar = 0.0;
+	if(dist_to_center <= 0.15) {
+		scalar = 1.5;
+	}
+	
+	COLOR = textureLod(TEXTURE, UV, blur_amount*scalar);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/blur_amount = 1.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="BlurredBG" type="Control" parent="Menu"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/BlurredBG"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control/CenterContainer"]
+margin_left = 760.0
+margin_top = 358.0
+margin_right = 1160.0
+margin_bottom = 721.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Control/CenterContainer/VBoxContainer"]
+margin_right = 400.0
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control/CenterContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 400.0
+margin_bottom = 363.0
+rect_min_size = Vector2( 400, 0 )
+custom_constants/separation = 20
+
+[node name="Play" type="Button" parent="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 101.0
+theme = ExtResource( 1 )
+text = "Play"
+
+[node name="Settings" type="Button" parent="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer"]
+margin_top = 121.0
+margin_right = 400.0
+margin_bottom = 222.0
+theme = ExtResource( 1 )
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer"]
+margin_top = 242.0
+margin_right = 400.0
+margin_bottom = 343.0
+theme = ExtResource( 1 )
+text = "Exit"
+
+[node name="Settings" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Settings/Control"]
+modulate = Color( 1, 1, 1, 0.462745 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Control/CenterContainer"]
+margin_left = 660.0
+margin_top = 407.0
+margin_right = 1260.0
+margin_bottom = 673.0
+rect_min_size = Vector2( 600, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Control/CenterContainer/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 161.0
+custom_fonts/font = ExtResource( 4 )
+text = "Settings"
+align = 1
+
+[node name="Back" type="Button" parent="Settings/Control/CenterContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 600.0
+margin_bottom = 266.0
+theme = ExtResource( 1 )
+text = "Back"
+
+[connection signal="pressed" from="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Menu/Control/CenterContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Settings/Control/CenterContainer/VBoxContainer/Back" to="Settings" method="_on_Back_pressed"]

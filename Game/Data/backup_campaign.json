@@ -1,0 +1,59 @@
+
+// THese levels were meant to introduce STEP COUNTING and SHOOTING THINGS ON A TIMER
+// But step counting has been moved back (and might not even be in the final game, and shooting things is explained with the shooter)
+{
+			"name": "Bears of Balance",
+			"desc": "Teddy bears like hugging so much, they won’t automatically let go! Instead, picking up a bear will show you a number of paws. Each time you move or rotate, it removes a paw. All paws are gone? It will immediately drop onto your current cell.",
+			"points_per_star": 10,
+			"props": {
+
+				"special_cells": ["shooter"],
+
+				"line_up_trampolines_with_beds": true,
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["MaxSteps"]
+			}
+		},
+
+		{
+			"name": "Throwing Teddies",
+			"desc": "We've been told by health and safety inspection, that our shooter cells are waaaay too dangerous, and not cute at all. But ... how will we deliver bears without them? Oh, I know, just throw them yourselves.",
+			"points_per_star": 10,
+			"props": {
+
+				"special_cells": [],
+
+				"moving": {
+					"items_shoot_from_hands": true
+				},
+
+				"objective": {
+					"duration": 180
+				},
+				
+				"tutorial": ["ItemsShootFromHands"]
+			}
+		},
+
+		{
+			"name": "A Step Forward",
+			"desc": "Sometimes it's hard to tell a cute teddy bear \"no!\" But you have to, because sometimes you want to drop them sooner, or later, than they want. To solve that, we added a new cell! It will do your paws +1 or -1, depending on how you're rotated.",
+			"points_per_star": 10,
+			"props": {
+
+				"special_items": ["tinycactus"],
+				"special_cells": ["trampoline", "hole", "stepchanger"],
+
+				"line_up_trampolines_with_beds": true,
+
+				"objective": {
+					"duration": 240
+				},
+				
+				"tutorial": ["StepChanger"]
+			}
+		},
